@@ -365,13 +365,14 @@ button {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
-          justify-content: center;
-  border-top: 1px solid #CBBADB;
-  border-bottom: 1px solid #CBBADB; }
+          justify-content: center; }
 
 .countdown__element {
   padding: 16px 16px 8px 16px;
-  border-right: 1px solid #CBBADB; }
+  border: 1px solid #CBBADB;
+  border-right: none; }
+  .countdown__element:last-child {
+    border-right: 1px solid #CBBADB; }
   .countdown__element .count, .countdown__element .label {
     display: block; }
   .countdown__element .count {
@@ -395,7 +396,9 @@ button {
   .countdown .count {
     font-size: 1.5em; }
   .countdown__seconds {
-    display: none; } }
+    display: none; }
+  .countdown__element:nth-child(4) {
+    border-right: 1px solid #CBBADB; } }
 
 .happy {
   padding-top: 205px;
