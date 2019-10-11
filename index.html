@@ -10,17 +10,28 @@
     <link rel="stylesheet" href="css/main.css"/>
   </head>
   <body>
+    <nav class="mobile-menu">
+      <button class="mobile-menu__close"></button>
+      <ul class="navigation__list mobile-navigation__list">
+        <li class="navigation__item mobile-navigation__item"><a class="mobile-navigation__link" href="#">Home</a></li>
+        <li class="navigation__item mobile-navigation__item"><a class="mobile-navigation__link" href="#happy-couple">Happy couple</a></li>
+        <li class="navigation__item mobile-navigation__item"><a class="mobile-navigation__link" href="#love-story">Love story</a></li>
+        <li class="navigation__item mobile-navigation__item"><a class="mobile-navigation__link" href="#photos">Our photos</a></li>
+        <li class="navigation__item mobile-navigation__item"><a class="mobile-navigation__link" href="#venues">Venues</a></li>
+      </ul>
+    </nav>
     <header class="main-header">
       <div class="container container-flex"><a class="header__logo" href="index.html"><img class="logo__img" src="img/header/logo.png" alt="Logo"/></a>
         <nav class="header__navigation">
           <ul class="navigation__list">
             <li class="navigation__item"><a class="navigation__link" href="#">Home</a></li>
-            <li class="navigation__item"><a class="navigation__link" href="#">Happy couple</a></li>
-            <li class="navigation__item"><a class="navigation__link" href="#">Love story</a></li>
-            <li class="navigation__item"><a class="navigation__link" href="#">Our photos</a></li>
-            <li class="navigation__item"><a class="navigation__link" href="#">Venues</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="#happy-couple">Happy couple</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="#love-story">Love story</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="#photos">Our photos</a></li>
+            <li class="navigation__item"><a class="navigation__link" href="#venues">Venues</a></li>
           </ul>
         </nav>
+        <button class="mobile-menu__button">Menu</button>
         <button class="header__button">RVSP</button>
       </div>
     </header>
@@ -37,7 +48,7 @@
         </div>
       </div>
     </section>
-    <section class="happy">
+    <section class="happy" id="happy-couple">
       <div class="container">
         <h2 class="section-title">Happy couple</h2>
         <div class="happy__groom">
@@ -73,7 +84,7 @@
         </div>
       </div>
     </section>
-    <section class="story">
+    <section class="story" id="love-story">
       <div class="container">
         <h2 class="section-title">Love story</h2>
         <div class="flex-wrapper">
@@ -92,7 +103,7 @@
         </div>
       </div>
     </section>
-    <section class="photos">
+    <section class="photos" id="photos">
       <h2 class="section-title">Our photos</h2>
       <div class="slick-center-wrap slider-wrapper">
         <ul class="slick-center slick__slider">
@@ -111,7 +122,7 @@
         </div>
       </div>
     </section>
-    <section class="venues"> 
+    <section class="venues" id="venues"> 
       <div class="container flex-container">
         <h2 class="section-title">Venues</h2>
         <section class="ceremony__address">
@@ -147,22 +158,37 @@
         <form class="feedback__form" action="" method="POST">
           <h2 class="form__title">Rvsp</h2>
           <p class="form__descr">Please reserve before May 16th, 2020</p>
-          <p class="inputs-wrapper">
-            <input class="form__name" type="text" name="name" placeholder="Your Name" autocomplete="off"/>
-            <input class="form__email" type="email" name="mail" placeholder="Your E-mail" autocomplete="off"/>
-          </p>
-          <p class="inputs-wrapper">
-            <input class="form__guests-number" type="number" name="guests-number" placeholder="Number of Guests" autocomplete="off"/>
-            <select class="form__attend">
-              <option value="">I will Attend</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-            </select>
-          </p>
-          <p class="inputs-wrapper">
+          <div class="inputs-group">
+            <p class="input-wrapper">
+              <label for="name">Your name</label>
+              <input class="form__name" type="text" name="name" placeholder="Your Name" autocomplete="off"/>
+            </p>
+            <p class="input-wrapper">
+              <label class="d" for="mail">Your mail</label>
+              <input class="form__email" type="email" name="mail" placeholder="Your E-mail" autocomplete="off"/>
+            </p>
+          </div>
+          <div class="inputs-group">
+            <p class="input-wrapper">
+              <label for="guests-number">Number of Gueats</label>
+              <input class="form__guests-number" type="number" name="guests-number" placeholder="Number of Guests" autocomplete="off"/>
+            </p>
+            <div class="input-wrapper"><span class="label">I will attend</span>
+              <div class="dropdown">
+                <div class="select"><span>I will Attend</span></div>
+                <input type="hidden" name="answer"/>
+                <ul class="dropdown-menu">
+                  <li id="yes">Yes</li>
+                  <li id="not">Not</li>
+                  <li id="notSure">Not shure</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <p class="inputs-group">
             <textarea class="form__message" placeholder="Your Comment"></textarea>
           </p>
-          <p class="button-wrapper">
+          <p class="inputs-group">
             <button class="btn" type="submit">I will attend</button>
           </p>
         </form>
@@ -186,6 +212,7 @@
         </div>
       </div>
     </footer>
+    <button class="toTop" id="toTop" type="button"></button>
     <script src="js/libs.min.js"></script>
     <script type="text/javascript" src="https://api-maps.yandex.ru/2.1/?apikey=0a7ad2dd-daec-4dac-84d8-e01e38600600&amp;lang=ru_RU"></script>
     <script src="js/main.js"></script>
